@@ -1,0 +1,83 @@
+@use './variables' as *;
+
+.testimonials__panel {
+  padding: 80px 0 60px;
+  border-radius: $radius-xl;
+  background-color: $color-dark;
+  color: $color-white;
+  overflow: hidden;
+}
+
+.testimonial {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.testimonial__bubble {
+  position: relative;
+  padding: 48px 52px;
+  border: 1px solid $color-green;
+  border-radius: $radius-lg;
+  font-size: 18px;
+  line-height: 1.55;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50px;
+    bottom: -18px;
+    width: 30px;
+    height: 30px;
+    background-color: $color-dark;
+    border-right: 1px solid $color-green;
+    border-bottom: 1px solid $color-green;
+    transform: rotate(45deg);
+  }
+}
+
+.testimonial__author {
+  margin-top: 40px;
+  margin-left: 70px;
+  display: grid;
+  gap: 4px;
+
+  strong {
+    color: $color-green;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 18px;
+  }
+}
+
+.testimonials__controls {
+  margin-top: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+
+  > span {
+    font-size: 28px;
+  }
+}
+
+.testimonials__dots {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+  }
+
+  .is-active {
+    background-color: $color-green;
+    border-color: $color-green;
+  }
+}

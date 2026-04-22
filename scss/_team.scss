@@ -1,0 +1,71 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.team-card {
+  @include card;
+  padding: 40px 35px;
+
+  p {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+}
+
+.team-card__header {
+  display: grid;
+  grid-template-columns: 105px 1fr auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid $color-dark;
+
+  h3 {
+    margin-bottom: 3px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.team-card__avatar {
+  width: 98px;
+  height: 98px;
+  border-radius: 18px;
+  background-color: $color-green;
+  border: 1px solid $color-dark;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.team-card__position {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.team-card__social {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: $color-dark;
+  color: $color-green;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.team__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}

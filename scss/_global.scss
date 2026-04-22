@@ -1,0 +1,95 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+body {
+  font-family: $font-main;
+  color: $color-text;
+  background-color: $color-white;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-padding;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+
+  h2 {
+    display: inline-block;
+    background-color: $color-green;
+    border-radius: 7px;
+    padding: 0 7px;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  p {
+    max-width: 580px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logo__mark {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 68px;
+  padding: 20px 35px;
+  border-radius: $radius-sm;
+  border: 1px solid $color-dark;
+  font-size: 20px;
+  line-height: 1.4;
+  transition: $transition;
+}
+
+.btn--dark {
+  background-color: $color-dark;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-green;
+    color: $color-dark;
+  }
+}
+
+.btn--outline {
+  background-color: transparent;
+
+  &:hover {
+    background-color: $color-dark;
+    color: $color-white;
+  }
+}
+
+.btn--green {
+  background-color: $color-green;
+  color: $color-dark;
+
+  &:hover {
+    background-color: $color-white;
+  }
+}

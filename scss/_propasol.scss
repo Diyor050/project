@@ -1,0 +1,88 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.proposal {
+  padding-bottom: 80px;
+
+  &__box {
+    background-color: $color-soft;
+    border-radius: $radius-xl;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__content {
+    max-width: 500px;
+
+    h2 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__art {
+    width: 260px;
+    height: 220px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at center, #191a23 0 35%, transparent 36%),
+      radial-gradient(circle at 40% 45%, #fff 0 6%, transparent 7%),
+      radial-gradient(circle at 60% 45%, #fff 0 6%, transparent 7%),
+      radial-gradient(circle at 20% 80%, #b9ff66 0 18%, transparent 19%);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border: 1px solid $color-dark;
+      border-radius: 50%;
+      width: 170px;
+      height: 35px;
+      left: 45px;
+    }
+
+    &::before {
+      top: 90px;
+    }
+
+    &::after {
+      top: 110px;
+    }
+  }
+}
+
+@include breakpoint(768px) {
+  .proposal {
+    &__box {
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 25px;
+    }
+
+    &__content {
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    &__art {
+      width: 180px;
+      height: 160px;
+    }
+  }
+}

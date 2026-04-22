@@ -1,0 +1,30 @@
+@use './variables' as *;
+
+@mixin container {
+  width: min($container-width, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin section-padding {
+  padding-block: 70px;
+}
+
+@mixin card {
+  border: 1px solid $color-dark;
+  box-shadow: $shadow-card;
+  border-radius: $radius-lg;
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+}

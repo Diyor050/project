@@ -1,0 +1,23 @@
+@use './variables' as *;
+
+.logos {
+  padding-top: 30px;
+  padding-bottom: 70px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    align-items: center;
+
+    span {
+      font-size: 32px;
+      font-weight: 700;
+      color: #777777;
+      text-align: center;
+      text-transform: none;
+      filter: grayscale(100%);
+      opacity: 0.85;
+    }
+  }
+}

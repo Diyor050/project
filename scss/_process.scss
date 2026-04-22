@@ -1,0 +1,68 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.process__list {
+  display: grid;
+  gap: 30px;
+}
+
+.process__item {
+  @include card;
+  background-color: $color-light;
+  padding: 0 60px;
+}
+
+.process__item.is-open {
+  background-color: $color-green;
+
+  .process__body {
+    display: block;
+  }
+
+  .process__toggle {
+    font-size: 38px;
+    line-height: 1;
+  }
+}
+
+.process__header {
+  @include button-reset;
+  width: 100%;
+  @include flex-between;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.process__heading {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.process__number {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.process__toggle {
+  width: 58px;
+  height: 58px;
+  border: 1px solid $color-dark;
+  border-radius: 50%;
+  background-color: $color-light;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.process__body {
+  display: none;
+  padding: 30px 0 40px;
+  border-top: 1px solid $color-dark;
+  font-size: 18px;
+  line-height: 1.45;
+}

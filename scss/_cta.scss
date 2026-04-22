@@ -1,0 +1,62 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.cta__card {
+  border-radius: $radius-xl;
+  background-color: $color-light;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta__content {
+  max-width: 500px;
+
+  h2 {
+    margin-bottom: 26px;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 26px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+}
+
+.cta__visual {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 220px;
+  justify-self: end;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border: 3px solid $color-dark;
+  }
+
+  &::before {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    right: 40px;
+    top: 20px;
+    border-style: dashed;
+  }
+
+  &::after {
+    width: 120px;
+    height: 120px;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 30px;
+    background-color: $color-green;
+    box-shadow: 130px -70px 0 -30px $color-dark;
+  }
+}

@@ -1,0 +1,191 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  @include card;
+  min-height: 310px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.service-card--light {
+  background-color: $color-light;
+}
+
+.service-card--green {
+  background-color: $color-green;
+}
+
+.service-card--dark {
+  background-color: $color-dark;
+  color: $color-white;
+
+  .service-card__content h3 span {
+    background-color: $color-white;
+    color: $color-dark;
+  }
+
+  .service-card__content a {
+    color: $color-white;
+  }
+}
+
+.service-card__content {
+  h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 90px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    span {
+      background-color: $color-green;
+      color: $color-dark;
+      border-radius: 7px;
+      padding: 0 7px;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+
+    &::before {
+      content: '↗';
+      width: 41px;
+      height: 41px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $color-dark;
+      color: $color-green;
+      font-size: 22px;
+      line-height: 1;
+      transform: rotate(30deg);
+    }
+  }
+}
+
+.service-card--dark .service-card__content a::before {
+  background-color: $color-white;
+  color: $color-dark;
+}
+
+.service-card__visual {
+  position: relative;
+  width: 210px;
+  height: 170px;
+  flex: 0 0 auto;
+}
+
+.service-card__visual::before,
+.service-card__visual::after {
+  content: '';
+  position: absolute;
+  border: 3px solid $color-dark;
+  border-radius: 18px;
+}
+
+.service-card__visual--seo::before {
+  inset: 24px 24px 24px 24px;
+  background-color: $color-white;
+}
+
+.service-card__visual--seo::after {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  left: 20px;
+  top: 20px;
+  background: $color-green;
+}
+
+.service-card__visual--ppc::before {
+  inset: 22px;
+  background-color: $color-white;
+}
+
+.service-card__visual--ppc::after {
+  width: 80px;
+  height: 50px;
+  right: 16px;
+  bottom: 18px;
+  background-color: $color-green;
+}
+
+.service-card__visual--social::before {
+  inset: 20px 34px;
+  border-radius: 50%;
+  background: $color-green;
+}
+
+.service-card__visual--social::after {
+  width: 110px;
+  height: 70px;
+  left: 50px;
+  top: 50px;
+  background: $color-white;
+}
+
+.service-card__visual--email::before {
+  inset: 32px 24px;
+  background-color: $color-white;
+}
+
+.service-card__visual--email::after {
+  left: 24px;
+  right: 24px;
+  top: 32px;
+  height: 0;
+  border-radius: 0;
+  border-width: 0 0 3px 0;
+}
+
+.service-card__visual--content::before {
+  width: 140px;
+  height: 110px;
+  left: 38px;
+  top: 25px;
+  background-color: $color-white;
+}
+
+.service-card__visual--content::after {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  right: 16px;
+  bottom: 8px;
+  background-color: $color-green;
+}
+
+.service-card__visual--analytics::before {
+  width: 155px;
+  height: 95px;
+  left: 30px;
+  top: 28px;
+  background-color: $color-white;
+}
+
+.service-card__visual--analytics::after {
+  width: 95px;
+  height: 68px;
+  right: 10px;
+  bottom: 10px;
+  background-color: $color-green;
+}

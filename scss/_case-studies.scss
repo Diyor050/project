@@ -1,0 +1,40 @@
+@use './variables' as *;
+
+.case-studies__panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px;
+  padding: 70px 60px;
+  border-radius: $radius-xl;
+  background-color: $color-dark;
+  color: $color-white;
+}
+
+.case-studies__item {
+  padding-right: 64px;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+
+  &:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: $color-green;
+    font-size: 20px;
+
+    &::after {
+      content: '↗';
+      transform: rotate(30deg);
+    }
+  }
+}

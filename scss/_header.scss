@@ -1,0 +1,26 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.header {
+  padding-top: 60px;
+}
+
+.header__inner {
+  @include flex-between;
+  gap: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  a {
+    font-size: 20px;
+    transition: $transition;
+
+    &:hover {
+      color: $color-muted;
+    }
+  }
+}
